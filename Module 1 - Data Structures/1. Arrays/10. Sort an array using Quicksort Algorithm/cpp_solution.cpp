@@ -18,8 +18,8 @@ int partition(int arr[], int start, int end){
 	
 	// count elements smaller than pivot
 	int count = 0;
-	for(int i = start; i <= end; i++){
-		if(pivot >= arr[i]) count++:
+	for(int i = start+1; i <= end; i++){
+		if(pivot >= arr[i]) count++;
 	}
 	
 	// swap the pivot
@@ -34,7 +34,7 @@ int partition(int arr[], int start, int end){
 	int i = start, j = end;
 	while(i<=pi && j>= pi){
 		while(arr[i] <= pivot) i++;
-		while(arr[j] > pivot) j++;
+		while(arr[j] > pivot) j--;
 		if(i < pi && j > pi){
 			int temp = arr[i];
 			arr[i] = arr[j];
@@ -48,17 +48,17 @@ int partition(int arr[], int start, int end){
 }
 
 
-void quick_sort(int arr[], int start, int end){
+void quick_sort_rec(int arr[], int start, int end){
 	if(start >= end) return;
 	
 	int pi = partition(arr, start, end);
-	quick_sort(arr, start, pi-1);
-	quick_sort(arr, pi+1, end);
+	quick_sort_rec(arr, start, pi-1);
+	quick_sort_rec(arr, pi+1, end);
 }
 
 
 void quick_sort(int arr[], int size){
-	quick_sort(arr, 0, size-1);
+	quick_sort_rec(arr, 0, size-1);
 }
 
 int main()
