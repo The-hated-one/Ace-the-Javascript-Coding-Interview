@@ -13,7 +13,7 @@ vector<int> find_max_sliding_window(vector<int>& v, int window_size) {
  	
  	// finding the first maximum
  	for(int i = 0; i < window_size; i++){
- 		if(!window.empty() && v[i] >= v[window.back()]) window.pop_back();
+ 		while(!window.empty() && v[i] >= v[window.back()]) window.pop_back();
  		
  		window.push_back(i);
 	 }
@@ -22,7 +22,7 @@ vector<int> find_max_sliding_window(vector<int>& v, int window_size) {
 	 
 	 // finding remaining maximum element
 	 for(int i = window_size; i < v.size(); i++){
-	 	if(!window.empty() && v[i] >= v[window.back()]) window.pop_back();
+	 	while(!window.empty() && v[i] >= v[window.back()]) window.pop_back();
 	 	
 	 	// remove the first element if it doesnt fall in the window_size
 	 	if(!window.empty() && window.front() <= i-window_size) window.pop_front();

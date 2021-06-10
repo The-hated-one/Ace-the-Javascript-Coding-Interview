@@ -1,4 +1,14 @@
 
+/*
+Description
+
+In the example below, you are given three positive integer arrays 
+which are sorted in ascending order.
+You have to find the smallest number that is common in all three arrays. 
+Return -1 if the smallest common number is not found.
+Let’s look at the three arrays below where 66? is the smallest number that is common in all the arrays:
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
