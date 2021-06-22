@@ -1,6 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/*
+Description
+
+Given an array of integers and a value, determine if there are any two integers in the array whose sum is equal to the given 
+value. Return true if the sum exists and return false if it does not.
+*/
+
 bool find_sum_of_two(vector<int>& arr, int val){
 	unordered_map<int, int> mp;
 	

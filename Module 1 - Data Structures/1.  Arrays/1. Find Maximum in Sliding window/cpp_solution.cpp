@@ -2,6 +2,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/*
+Description
+
+Given a large array of integers and a window of size ww, 
+find the current maximum 
+value in the window as the window slides through the entire array.
+*/
+
 vector<int> find_max_sliding_window(vector<int>& v, int window_size) {
  vector<int> result;
  

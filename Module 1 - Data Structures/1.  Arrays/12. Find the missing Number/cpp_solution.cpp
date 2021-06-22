@@ -17,28 +17,15 @@ Output: 7
 #include<bits/stdc++.h>
 using namespace std;
 
-void swap(vector<int> &arr, int i, int j) {
-	int temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-}
-
 // Time Complexity : O(n)
 // Space Complexity : O(1)
 
-int findMissingNumber(vector<int> &nums){
-	
-	for(int i = 0; i < nums.size(); ){
-		if(nums[i] < nums.size() && nums[i] != nums[nums[i]]) swap(nums, i, nums[i]);
-		else i++;
-	}
-	
-	for(int i = 0; i < nums.size(); i++){
-		if(nums[i] != i) return i;
-	}
-	
-	return nums.size();
-}
+int findMissingNumber(vector<int> &nums) {
+    int n = nums.size();
+    int x = accumulate(nums.begin(), nums.end(), 0);
+    int y = (n*(n+1))/2;
+    return (y-x);
+  }
 
 int main(int argc, char *argv[]) {
   vector<int> v1 = {4, 0, 3, 1};
