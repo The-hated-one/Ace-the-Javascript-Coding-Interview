@@ -34,9 +34,11 @@ bool canPartition_bf(const vector<int> &num, int sum, int currentIndex){
 	if(num.empty() || currentIndex >= num.size()) return false;
 	
 	if(num[currentIndex] <= sum){
+		// include the given number in the sum
 		if(canPartition_bf(num, sum-num[currentIndex], currentIndex+1)) return true;
 	}
 	
+	//dont include the given number in the sum
 	return canPartition_bf(num, sum, currentIndex+1);
 }
 
